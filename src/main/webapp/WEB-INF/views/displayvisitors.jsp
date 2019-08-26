@@ -9,17 +9,15 @@
 </head>
 <body>
 
-Welcome To VMS
+Available Visitors
 <c:url var="saveVisitor" value="/saveVisitor" ></c:url>
-<form:form method="POST" action="${saveVisitor}" modelAttribute="visitor">
-First Name:<input type="text" name="firstName"> <br>
-Last Name:<input type="text" name="lastName"> <br>
-<button type="submit">Save Visitor</button>
-</form:form>
+<c:forEach items="${allVisitors}" var="visitor">
+  FirstName:  ${visitor.firstName} <br>
+</c:forEach>
 
- <br> <br> <br>
-<c:url var="allVisitors" value="/allVisitors" ></c:url>
-<a href="${allVisitors}" >See All Visitors</a>
+
+<c:url var="loginPage" value="/login" ></c:url>
+<a href="${loginPage}" >back</a>
 
 </body>
 </html>
